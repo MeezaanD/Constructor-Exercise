@@ -1,9 +1,22 @@
-function PersonDetails(...details) {
-    this.firstName = details[0];
-    this.lastName = details[1];
-    this.email = details.at(-1)
-    
+let PersonDetails = {
+    firstName:'Meezaan',
+    lastName:'Davids',
+    email:'Meezaan@gmail.com'
 }
 
-let person1 = new PersonDetails("Meezaan", "Davids", "meezaan@gamil.com")
-console.log(person1);
+Object.defineProperty(PersonDetails, "test" , {
+    get : function () {
+        return this.firstName
+    }   
+});
+
+Object.defineProperty(PersonDetails, "test1", {
+    set : function (value) {
+        this.firstName = value;
+    }
+});
+
+console.log(PersonDetails.firstName);
+console.log(PersonDetails.lastName);
+console.log(PersonDetails.email);
+
